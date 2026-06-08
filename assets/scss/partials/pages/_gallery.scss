@@ -1,0 +1,129 @@
+.pictures-container{
+    width: 100%;
+    padding: 3% 10%;
+    // min-height: 100vh;
+
+    display: grid; 
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(8, 300px);
+    gap: 2rem;
+
+    .img-box{
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        
+        background-color: azure;
+
+        a{
+            height: 100%;
+            width: 100%;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        &:hover img{
+            transform: scale(1.1);
+            transform-origin: center;
+        }
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(16, 300px);
+    }
+
+    .img1{
+        grid-column: span 2;
+    }
+
+    .img5{
+        grid-column: span 2;
+    }
+    .img11{
+        grid-column: span 2;
+    }
+    .img12{
+        grid-column: span 2;
+    }
+    .img16{
+        grid-column: span 2;
+    }
+    .img22{
+        grid-column: span 2;
+    }
+
+    .img6{
+        grid-row: span 2;
+    }
+    .img8{
+        grid-row: span 2;
+    }
+    .img17{
+        grid-row: span 2;
+    }
+    .img19{
+        grid-row: span 2;
+    }
+}
+
+.video-caption{
+    padding:3rem 15% 0rem 15%;
+}
+
+.videos-container{
+    width: 100%;
+    padding: 3% 10%;
+    min-height: 100vh;
+    background-color: var(--bg-col-20);
+
+    display: grid; 
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4, 300px);
+    gap: 2rem;
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(16, 300px);
+    }
+
+    .video-box{
+        background-color: rgb(153, 153, 153);
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        aspect-ratio: 1/1;
+
+        iframe{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .video1{
+        grid-column: span 2;
+        grid-row: span 2;
+            
+    }
+    .video4{
+        grid-column: span 2;
+        grid-row: span 2;
+            
+    }
+    .video5{
+        grid-column: span 2;
+            
+    }
+    .video8{
+        grid-column: span 2;
+            
+    }
+
+
+}

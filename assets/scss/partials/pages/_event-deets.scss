@@ -1,0 +1,97 @@
+#event-deets-container {
+    width: 100%;
+    padding: 3% 15%;
+
+    .deets-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 7rem;
+
+        .events-outline{
+            .guestbox{
+                margin-top: 2rem;
+                display: flex;
+                gap: 7rem;
+
+                .guest-card{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    h3{
+                        font-size: 2rem;
+                        margin-top: 1rem;
+                        color: var(--secondary-color);
+                    }
+
+                    p{
+                        font-style: italic;
+                    }
+
+                    .img-box{
+                        height: 7rem;
+                        width: 7rem;
+                        background-color: red;
+                        border-radius: 50%;
+                    }
+                    text-align: center;
+                }
+            }
+        }
+
+        .event-details {
+            // padding: 2rem 4rem;
+            
+            display: grid;
+            gap: 7rem;
+            
+            .deets-card {
+                border-radius: .5rem;
+                padding: 2rem 4rem;
+                border: 1px solid var(--bg-col-20);
+                box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+
+                .deet-item {
+                    margin-bottom: 3rem;
+                }
+
+            }
+
+            .info-card {
+                border-radius: .5rem;
+                padding: 2rem 4rem;
+                border: 1px solid var(--bg-col-20);
+                box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+                background-color: var(--primary-color);
+                width: 100%;
+
+                .info-item {
+
+                    p.secondary {
+                        color: var(--secondary-color);
+                    }
+
+                    a{
+                    text-transform: lowercase;
+                }
+
+                    p {
+                        color: var(--white-100);
+                    }
+
+                    i{
+                        color: var(--white-100);
+                        cursor: pointer;
+                        margin-right: 2rem;
+                        transition: all .3s ease-in-out;
+
+                        &:hover{
+                            color: var(--secondary-color);
+                            transform: scale(1.2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

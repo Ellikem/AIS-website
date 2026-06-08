@@ -1,0 +1,185 @@
+$breakpoints: (
+  mobile: 480px,
+  tablet: 768px,
+  laptop: 1024px,
+  desktop: 1280px,
+  wide: 1536px
+);
+
+@mixin respond-to($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media (min-width: map-get($breakpoints, $size)) {
+      @content;
+    }
+  }
+   @else {
+    @warn "Breakpoint '#{$size}' does not exist.";
+  }
+}
+
+
+:root{
+    /* CSS CMYK */
+    $primary-light: #2b50a3;
+    $primary-color: #1a234e;
+    $primary-dark: #212c62;
+    
+    --primary-light: #2b50a3;
+    --primary-color: #1a234e;
+    --primary-dark: #212c62;
+    --secondary-color: #BEA251;
+    --secondary-color-rgb: rgb(190, 162, 81);
+    
+    
+    /* Black and White Colors */
+    --black-100: #000;
+    --darker-grey: #444;
+    --dark-grey: #666;
+    
+    --white-100: #fff;
+    --light-grey: #cacaca;
+    --lighter-grey: #eeeeee;
+    
+    --bg-col-0:#dcdfe2;
+    --bg-col-10: #e9ecef;
+    --bg-col-20: #e9e9e9;
+    
+    }
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+
+  @include respond-to(tablet) {
+    font-size: 56.25%;
+  }
+
+  @include respond-to(desktop) {
+    font-size: 62.5%;
+  }
+
+  @include respond-to(wide) {
+    font-size: 68.75%;
+  }
+}
+
+h1 { font-size: clamp(3rem, 6vw, 6rem); }
+h2 { font-size: clamp(2rem, 4.5vw, 4rem); }
+h3 { font-size: clamp(1.6rem, 3vw, 3rem); }
+h4 { font-size: clamp(1.5rem, 2.5vw, 2.25rem); }
+h5 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
+h6 { font-size: clamp(1.125rem, 1.5vw, 1.5rem); }
+
+p,
+a,
+input,
+textarea,
+button,
+input,
+label,
+button,
+textarea,
+select,li,
+i,span{
+  font-size: clamp(1.3rem, 1.2rem + 0.5vw, 1.6rem);
+  font-family: 'poppins',sans-serif;
+  text-wrap: balance;
+}
+
+
+a{
+    text-decoration: none;
+    color: var(--darker-grey);
+    text-transform: capitalize;
+    font-family: 'Outfit', sans-serif;
+    display: inline-block;
+    font-weight: 300;
+}
+
+
+p{
+    text-wrap: balance;
+    // font-size: clamp( 1.4rem, 2vw, 1.8rem);
+    line-height: 1.7;
+    color: var(--darker-grey);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+
+}
+
+
+
+h1{
+    //  font-size: clamp(3rem, 6vw, 6rem);
+     font-weight: 900;
+    font-weight: 900;
+    text-transform: capitalize;
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.2;
+    color: var(--primary-color);
+
+}
+
+h2{
+    text-transform: capitalize;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+
+}
+
+h3{
+    text-transform: capitalize;
+    font-weight: 500;
+    font-family: 'Outfit', sans-serif;
+}
+
+
+
+
+span{
+    font-size:inherit ;
+    font-family: 'Outfit', sans-serif;
+    text-transform: capitalize;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+label,
+button,
+textarea,
+select,li {
+  font-family: inherit;
+
+}
+
+
+ul.bullet {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+  position: relative;
+  padding-left: 30px;
+}
+
+li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 16px;
+  height: 16px;
+  background-size: cover;
+}
+}
+
+.gold li::before {
+  background-image: url("/media/images/logos/bullet-gold.png");
+}
+.blue li::before {
+  background-image: url("/media/images/logos/bullet-blue.png");
+}
+
+
+

@@ -1,0 +1,117 @@
+@use "animations";
+@use "../scss/partials/base/colors";
+@use "decor";
+@use "../scss/partials/base/grid";
+@use "../scss/partials/base/layout";
+@use "../scss/partials/base/reset";
+@use "../scss/partials/base/typography";
+@use "../scss/partials/components/buttons";
+@use "../scss/partials/components/hero";
+@use "../scss/partials/components/navbar";
+@use "../scss/partials/components/cards";
+@use "../scss/partials/components/footer";
+@use "../scss/partials/pages/home";
+@use "../scss/partials/pages/store";
+@use "../scss/partials/pages/about";
+
+@use "../scss/partials/pages/academics";
+@use "../scss/partials/pages/admissions";
+@use "../scss/partials/pages/blog-details";
+@use "../scss/partials/pages/event-deets";
+@use "../scss/partials/pages/events";
+@use "../scss/partials/pages/gallery";
+
+
+@use "utilities";
+@use "../scss/partials/base/components";
+
+:root {
+  /* CSS CMYK */
+  --primary-light: #2b50a3;
+  --primary-color: #212c62;
+  --primary-dark: #1a234e;
+
+  --grad-prim: linear-gradient(45deg, #2b50a3 0%, #212c62 100%);
+
+  --grad-prim-9: linear-gradient(45deg, rgba(43, 79, 163, 0.9), rgba(33, 44, 98, 0.9));
+
+  --grad-prim-8: linear-gradient(45deg, rgba(43, 79, 163, 0.8), rgba(33, 44, 98, 0.8));
+
+  --grad-prim-7: linear-gradient(45deg, rgba(43, 79, 163, 0.7), rgba(33, 44, 98, 0.7));
+
+  --grad-prim-5: linear-gradient(45deg, rgba(43, 79, 163, 0.5), rgba(33, 44, 98, 0.5));
+
+  --grad-sec: linear-gradient(45deg, rgb(190, 162, 81) 0%, rgb(150, 127, 60)0%);
+
+  --grad-sec-9: linear-gradient(45deg, rgb(190, 162, 81, 0.9), rgb(150, 127, 60, 0.9));
+
+  --grad-sec-8: linear-gradient(45deg, rgb(190, 162, 81, 0.8), rgb(150, 127, 60, 0.8));
+
+  --grad-sec-7: linear-gradient(45deg, rgb(190, 162, 81, 0.7), rgb(150, 127, 60, 0.7));
+
+  --grad-sec-5: linear-gradient(45deg, rgb(190, 162, 81, 0.5), rgb(150, 127, 60, 0.5));
+
+
+  --secondary-color: #bea251;
+  --secondary-color-rgb: rgb(190, 162, 81);
+
+  /* Black and White Colors */
+  --black-100: #3333;
+  --darker-grey: #444;
+  --dark-grey: #666;
+
+  --white-100: #fff;
+  --light-grey: #cacaca;
+  --lighter-grey: #eeeeee;
+
+  --bg-col-1: hsl(208, 30%, 92%);
+  --bg-col-2: hsl(208, 28%, 85%);
+}
+
+$breakpoints: (
+  mobile: 480px,
+  tablet: 768px,
+  laptop: 1024px,
+  desktop: 1280px,
+  wide: 1536px
+);
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints,$breakpoint){
+    @media (min-width: map-get($breakpoints,$breakpoint)){
+      @content;
+    }
+  }
+}
+
+// Breakpoint map
+$breakpoints: (
+  mobile: 576px,
+  tablet: 768px,
+  laptop: 992px,
+  desktop: 1200px,
+  wide: 1400px
+);
+
+// Mixin
+@mixin breakpoint($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media (min-width: map-get($breakpoints, $size)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint '#{$size}' does not exist.";
+  }
+}
+
+#loader{
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 99999999999999;
+  background: var(--grad-prim); ;
+
+  .img-box{
+    width: 20rem;
+  }
+}

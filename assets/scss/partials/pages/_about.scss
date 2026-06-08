@@ -1,0 +1,83 @@
+$breakpoints: (
+    mobile: 480px,
+    tablet: 768px,
+    laptop: 1024px,
+    desktop: 1280px,
+    wide: 1536px
+);
+
+@mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+}
+
+#about-whoweare {
+    .sec-content {
+        width: 100%;
+
+        .who-img {
+            height: 45rem;
+            width: 60rem;
+
+            img {
+                aspect-ratio: 16/9;
+                object-position: top;
+            }
+        }
+    }
+}
+
+#symbolism {
+    .symbols-container {
+        .card-box {
+            width: 20rem;
+            height: 20rem;
+            background: var(--white-100);
+            padding: 1rem 1.5rem;
+            border-radius: .5rem;
+
+            .img-box {
+                img {
+                    height: 10rem;
+
+                    &.tab {
+                        height: 20px
+                    }
+                }
+            }
+        }
+    }
+}
+
+#mission-phil {
+    .img-container {
+        height: 80%;
+
+        img {
+            width: 25rem;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                flex-grow: 1;
+            }
+        }
+    }
+}
+
+#guiding-values {
+    .guiding-card {
+        background: var(--primary-color);
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            transform: translateY(-1rem);
+        }
+
+        h3 {
+            font-size: 2rem;
+        }
+    }
+}

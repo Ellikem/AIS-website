@@ -1,0 +1,190 @@
+/* =========================================================
+   SCROLL-BASED ZOOM ANIMATIONS
+   ========================================================= */
+.zoomLeft,
+.zoomRight,
+.zoomDown,
+.zoomIn {
+  animation-duration: 1ms;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+
+  animation-timeline: view();
+  animation-range: entry 0% cover 55%;
+
+  will-change: transform, opacity, filter;
+}
+
+/* =========================================================
+   ZOOM LEFT
+   ========================================================= */
+
+.zoomLeft {
+  opacity: 0;
+  filter: grayscale(1) blur(3px);
+
+  transform: translateX(-200px) scale(0.7);
+
+  animation-name: zoomLeft;
+}
+
+@keyframes zoomLeft {
+  to {
+    opacity: 1;
+    filter: grayscale(0) blur(0px);
+
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* =========================================================
+   ZOOM RIGHT
+   ========================================================= */
+
+.zoomRight {
+  opacity: 0;
+  filter: grayscale(1) blur(3px);
+
+  transform: translateX(200px) scale(0.7);
+
+  animation-name: zoomRight;
+}
+
+@keyframes zoomRight {
+  to {
+    opacity: 1;
+    filter: grayscale(0) blur(0px);
+
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* =========================================================
+   ZOOM DOWN
+   ========================================================= */
+
+.zoomDown {
+  opacity: 0;
+  filter: grayscale(1) blur(3px);
+
+  transform: translateY(-200px) scale(0.7);
+
+  animation-name: zoomDown;
+}
+
+@keyframes zoomDown {
+  to {
+    opacity: 1;
+    filter: grayscale(0) blur(0px);
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   ZOOM UP
+   ========================================================= */
+
+.zoomIn {
+  opacity: 0;
+  filter: grayscale(1) blur(3px);
+
+  transform: translateY(50px) scale(0.7);
+
+  animation-name: zoomUp;
+}
+
+@keyframes zoomUp {
+  to {
+    opacity: 1;
+    filter: grayscale(0) blur(0px);
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+@keyframes kenburns{
+    0%{
+        background-size: 100%;
+        background-position: center;
+    }
+
+    25%{
+        background-size: 110%;
+        background-position:  left;
+    }
+    50%{
+        background-size: 100%;
+        background-position:  right;
+    }
+    100%{
+        background-size: 110%;
+        background-position: center top;
+    }
+}
+
+@keyframes loop{
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(-50%);
+    
+  }
+}
+@keyframes loopBack{
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(50%);
+    
+  }
+}
+.beat{
+  animation: beat  2s linear alternate-reverse infinite;
+}
+
+@keyframes beat{
+ 0%{
+  transform: scale(0.7);
+}
+100%{
+  
+  transform: scale(1);
+ }
+}
+
+.reveal-text span{
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100px);
+  animation: bounceReveal 2s forwards linear ;
+
+  &:nth-child(1){animation-delay: 0s;}
+  &:nth-child(2){animation-delay: 0.1s;}
+  &:nth-child(3){animation-delay: 0.2s;}
+  &:nth-child(4){animation-delay: 0.3s;}
+  &:nth-child(5){animation-delay: 0.4s;}
+  &:nth-child(6){animation-delay: 0.6s;}
+  &:nth-child(7){animation-delay: 0.7s;}
+  &:nth-child(8){animation-delay: 0.8s;}
+  &:nth-child(9){animation-delay: 0.9s;}
+  &:nth-child(10){animation-delay: 1s;}
+}
+
+@keyframes bounceReveal{
+  0%{
+    opacity: 0;
+    transform: scale(0.5) translateY(-50px);
+  }
+  60%{
+    opacity: 1;
+    transform: scale(1.1) translateY(-15px);
+  }
+  100%{
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,49 @@
+:root {
+    --bs-primary: #072757;
+    --bs-primary-rgb: 7, 39, 87;
+  
+    --bs-secondary: rgb(231, 238, 170);
+    --bs-secondary-rgb: 255, 102, 0;
+  }
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    font-family:'Poppins', sans-serif;
+    background-color:  var(--white-100);
+    overflow-x: hidden;
+     
+}
+
+
+
+img{
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+img.contain{
+    object-fit: contain;
+}
+
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
