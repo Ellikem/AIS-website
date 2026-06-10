@@ -214,12 +214,12 @@
 //#green
 
 #tpathways{
-    background-image: var(--grad-prim-9), url(/images/img2.jpg);
+    background-image: var(--grad-prim-9), url(/media/images/img2.jpg);
     
 }
 
 #learn-by{
-    background-image: var(--grad-prim-9), url(/images/form-sec.jpg);
+    background-image: var(--grad-prim-9), url(/media/images/form-sec.jpg);
 }
 
 //#
@@ -272,7 +272,7 @@
             gap: 0;
 
             .img-box{
-                background-image: url(/images/form-sec.jpg);
+                background-image: url(/media/images/form-sec.jpg);
                 background-size: 65rem 45rem;
                 transition: all 0.5s ease-in;
             }
@@ -292,23 +292,23 @@
             }
 
             &:hover .img1{
-                background-image: url(/images/img1.jpg);
+                background-image: url(/media/images/shaping-f3.jpg);
                 transform: translate(-5px, -5px);
                 box-shadow: 0 2px 6px rgba(66, 66, 66, 0.5);
             }
             &:hover .img2{
-                background-image: url(/images/img1.jpg);
+                background-image: url(/media/images/shaping-f3.jpg);
                 box-shadow: 0 2px 6px rgba(66, 66, 66, 0.5);
                 transform: translate(5px, -5px);
             }
             &:hover .img3{
                 box-shadow: 0 2px 6px rgba(66, 66, 66, 0.5);
-                background-image: url(/images/img1.jpg);
+                background-image: url(/media/images/shaping-f3.jpg);
                 transform: translate(-5px, 5px);
             }
             &:hover .img4{
                 box-shadow: 0 2px 6px rgba(66, 66, 66, 0.5);
-                background-image: url(/images/img1.jpg);
+                background-image: url(/media/images/shaping-f3.jpg);
                 transform: translate(5px, 5px);
             }
         }
@@ -409,7 +409,18 @@
 
 
 
+//#purple
+.btns-container{
 
+    .nav-link{
+
+        color: var(--primary-color) !important;
+    }
+    .active{
+        color: var(--secondary-color) !important;
+    }
+}
+//#
 
 
 
@@ -424,7 +435,7 @@
 #newsletter{
     padding: 5% 15%;
     height: 35vh;
-    background-image: linear-gradient(45deg, rgba(233, 198, 22, 0.8), rgba(0,0,0,0.9)), url(/images/img1.jpg);
+    background-image: var(--grad-sec-9), url(/media/images/form-sec.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -440,7 +451,7 @@
 #newsletters{
     padding: 5% 15%;
     height: 35vh;
-    background-image: linear-gradient(45deg, rgba(233, 198, 22, 0.8), rgba(0,0,0,0.9)), url(/images/img1.jpg);
+    background-image: var(--grad-sec-9), url(/media/images/form-sec.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;

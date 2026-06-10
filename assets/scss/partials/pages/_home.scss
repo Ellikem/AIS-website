@@ -379,8 +379,9 @@ $breakpoints: (
     position: relative;
     overflow: hidden;
     background-color: var(--white-100);
-    height: 31rem;
+    height: 27rem;
     border-radius: 1rem;
+    box-shadow: 0 0 6px rgba(56, 56, 56, 0.3);
 
     h3 {
       font-size: 1.8rem;
