@@ -14,6 +14,17 @@ $breakpoints: (
   }
 }
 
+.modal.popup {
+  @media (max-width: 1024px) {
+    display: none;
+    visibility: hidden;
+  }
+
+  @media (max-width: 650px) {
+    display: none;
+    visibility: hidden;
+  }
+}
 
 #myModal {
   position: fixed;
@@ -24,6 +35,14 @@ $breakpoints: (
   left: 50%;
   padding: 0;
   transform: translate(-50%, -50%);
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+
+  @media (max-width: 650px) {
+    display: none;
+  }
 
   &>* {
     padding: 0;
@@ -36,6 +55,14 @@ $breakpoints: (
     overflow: hidden;
     border-radius: 2rem;
     display: flex;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+
+    @media (max-width: 650px) {
+      display: none;
+    }
 
     .fa-times {
       cursor: pointer;
@@ -133,15 +160,34 @@ $breakpoints: (
 
 
   .section-content {
+
+    .txt-box {
+      @media (max-width: 650px) {
+        text-align: center;
+      }
+    }
+
     .img-container {
       position: relative;
       width: 100%;
       height: 100%;
+      
+      /* Mobile styles */
+      @media (max-width: 650px) {
+        position: static;
+      }
+      /* Mobile styles End */
+      
 
       .img-box {
         position: absolute;
         width: 45rem;
         transition: all .3s ease-in-out;
+
+        @media (max-width: 650px) {
+          position: static;
+          height: 30rem;
+        }
 
         &:hover {
           z-index: 3;
@@ -152,12 +198,28 @@ $breakpoints: (
           top: 0;
           left: 0;
 
+          
+          /* Mobile styles */
+          @media (max-width: 650px) {
+            position: static;
+            margin-bottom: 2rem;
+          }
+          /* Mobile styles End */
+
         }
 
         &.img2 {
           bottom: 0;
           right: 0;
           z-index: 2;
+
+          
+          /* Mobile styles */
+          @media (max-width: 650px) {
+            position: static;
+          }
+          /* Mobile styles End */
+          
         }
       }
     }
@@ -166,10 +228,34 @@ $breakpoints: (
 
 #purpose {
   .section-content {
+
+    @media (max-width: 650px) {
+      margin-top: 7rem;
+    }
+
     .img-container {
 
       .img-box {
-        width: 45rem;
+        min-width: 45rem;
+        
+        @media (max-width: 650px) {
+          height:30rem; 
+        }
+      }
+    }
+  }
+}
+
+#focused{
+
+  .section-content{
+
+    .img-box{
+
+      // min-width: 45rem;
+
+      @media (max-width: 650px) {
+       height: 30rem; 
       }
     }
   }
@@ -211,68 +297,39 @@ $breakpoints: (
   padding: 4rem 5%;
 
   .section-content {
+
     display: grid;
     grid-template-columns: 1fr 2fr;
 
-    @include respond-to(mobile) {
+    @media (max-width: 650px) {
+      margin-top: 7rem;
       grid-template-columns: 1fr;
     }
 
-    @include respond-to(tablet) {
-      grid-template-columns: 1fr;
-    }
 
-    @include respond-to(laptop) {
-      grid-template-columns: 1fr 2fr;
-
-    }
-
-    @include respond-to(desktop) {
-      grid-template-columns: 1fr 2fr;
-
-    }
-
-    @include respond-to(wide) {
-      grid-template-columns: 1fr 2fr;
-
-    }
   }
 
   .pathway-cards-container {
     display: flex;
     align-items: flex-end;
     gap: 1rem;
+
     // grid-template-columns: repeat(3, 1fr);
-
-    @include respond-to(mobile) {
+    @media (max-width: 650px) {
       flex-direction: column;
     }
 
-    @include respond-to(tablet) {
-      flex-direction: column;
 
-    }
-
-    @include respond-to(laptop) {
-      flex-direction: row;
-
-    }
-
-    @include respond-to(desktop) {
-      flex-direction: row;
-
-    }
-
-    @include respond-to(wide) {
-      flex-direction: row;
-
-    }
 
     .pathway-flip-card {
       background-color: transparent;
       width: 27rem;
       height: 45rem;
       perspective: 1000px;
+
+      @media (max-width: 650px) {
+        width: 35rem;
+      }
 
       .flip-card-inner {
         position: relative;
@@ -375,16 +432,38 @@ $breakpoints: (
 }
 
 #courses {
-  .course-card {
-    position: relative;
-    overflow: hidden;
-    background-color: var(--white-100);
-    height: 27rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 6px rgba(56, 56, 56, 0.3);
+  .section-content {
 
-    h3 {
-      font-size: 1.8rem;
+    @media (max-width: 650px) {
+      margin-top: 7rem;
+    }
+
+    .course-card {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--white-100);
+      height: 25rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 6px rgba(56, 56, 56, 0.3);
+
+      @media (max-width: 650px) {
+       height: 30rem; 
+      }
+
+      .img-box{
+        width: 100%;
+        height: 15rem;
+
+        @media (max-width: 650px) {
+         height: 15rem; 
+        }
+      }
+      
+
+
+      h3 {
+        font-size: 1.8rem;
+      }
     }
   }
 }
@@ -425,12 +504,28 @@ $breakpoints: (
       height: 100%;
       width: 100%;
 
+      
+      /* Mobile styles */
+      @media (max-width: 650px) {
+        position: static;
+      }
+      /* Mobile styles End */
+      
+
       .img-box {
         position: absolute;
         width: 27rem;
         border-radius: 1rem;
         overflow: hidden;
         box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+        
+        /* Mobile styles */
+        @media (max-width: 650px) {
+          height: 30rem;
+          position: static;
+        }
+        /* Mobile styles End */
+        
 
         &.img1 {
           top: -10rem;
@@ -503,6 +598,11 @@ $breakpoints: (
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+
+    @media (max-width: 650px) {
+     width: 50rem;
+     overflow: hidden; 
+    }
   }
 
   .testimonial-container {
@@ -511,6 +611,15 @@ $breakpoints: (
     // overflow: hidden;
     grid-template-columns: repeat(13, 400px);
     gap: 10rem;
+    
+    /* Mobile styles */
+    @media (max-width: 650px) {
+      gap: 1rem;
+    }
+    /* Mobile styles End */
+    
+
+
 
     .t-card {
       background-color: var(--white-100);
@@ -520,6 +629,13 @@ $breakpoints: (
       padding: 2rem;
       display: grid;
       gap: 1rem;
+      
+      /* Mobile styles */
+      @media (max-width: 650px) {
+        width: 30rem;
+      }
+      /* Mobile styles End */
+      
 
       .t-info {
         display: flex;
@@ -824,5 +940,3 @@ $breakpoints: (
   }
 
 }
-
-

@@ -1,22 +1,3 @@
-$breakpoints: (
-  mobile: 480px,
-  tablet: 768px,
-  laptop: 1024px,
-  desktop: 1280px,
-  wide: 1536px
-);
-
-@mixin respond-to($size) {
-  @if map-has-key($breakpoints, $size) {
-    @media (min-width: map-get($breakpoints, $size)) {
-      @content;
-    }
-  }
-
-  @else {
-    @warn "Breakpoint '#{$size}' does not exist.";
-  }
-}
 
 
 #landingHero {
@@ -25,13 +6,7 @@ $breakpoints: (
   width: 100%;
   overflow: hidden;
 
-  
-  @include respond-to(tablet) {
-    height: 40rem;
-  }
-  @include respond-to(laptop) {
-    height: 90vh;
-  }
+
 
   .carousel,
   .carousel-inner,
@@ -66,14 +41,14 @@ $breakpoints: (
     grid-template-columns: 2fr 1.2fr;
     gap: 3rem;
 
-    @include respond-to(mobile) {
-      grid-template-columns: repeat(1, 1fr);
+    @media (max-width: 1024px) {
       width: 90%;
     }
-    @include respond-to(laptop) {
-      width: 65%;
-      grid-template-columns: 2fr 1.2fr;
+    @media (max-width: 650px) {
+      grid-template-columns: 1fr;
     }
+
+  
 
     .caption {
       position: relative;
@@ -81,26 +56,10 @@ $breakpoints: (
       margin: auto;
       padding-right: 5rem;
 
-      @include respond-to(mobile) {
-        padding-right: 0;
-        text-align: center;
+      @media (max-width: 650px) {
+       text-align: center; 
       }
-      @include respond-to(tablet) {
-        padding-right: 0;
-        text-align: center;
-      }
-      @include respond-to(laptop) {
-        padding-right: 0;
-        text-align: left;
-      }
-      @include respond-to(wide) {
-        padding-right: 0;
-        text-align: left;
-      }
-
-      
-
-      
+     
 
       h1 {
         color: var(--white-100);
@@ -113,20 +72,6 @@ $breakpoints: (
           color: var(--secondary-color);
         }
 
-        @include respond-to(mobile) {
-          font-size: 3rem;
-          text-align: center;
-        }
-        @include respond-to(tablet) {
-          font-size: 3rem;
-          text-align: left;
-
-        }
-        @include respond-to(laptop) {
-          font-size: 5rem;
-          text-align: left;
-
-        }
       }
 
       p {
@@ -143,6 +88,10 @@ $breakpoints: (
       width: 100%;
       overflow: hidden;
       position: relative;
+
+      @media (max-width: 650px) {
+       display: none; 
+      }
 
       /* Fixed indicator */
       &::before {

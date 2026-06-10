@@ -27,29 +27,32 @@ $breakpoints: (
     height: 12rem;
     background-color: transparent;
     display: grid;
-    grid-template-columns: 45rem 1fr;
+    grid-template-columns: 35rem 1fr;
     border-bottom: 1px dotted #efefef48;
 
+
+    @media (max-width: 1440px) {
+      
+    }
     
-   
-    @include respond-to(mobile){
+   @media (max-width: 1024px) {
         display: none;
-    }
-    @include respond-to(tablet){
-        display: none;
-    }
-   
-    @include respond-to(laptop){
-        display: grid;
-    }
+      }
+      @media (max-width: 650px) {
+       display: none; 
+      }
    
 
     .logo-box {
         width: 100%;
-        padding: 1rem 10rem;
+        padding: 1rem 5rem 1rem 10rem;
         height: 100%;
         position: relative;
         transition: opacity 0.3s ease-in;
+
+        img{
+            width: 20rem;
+        }
 
 
 
@@ -85,6 +88,10 @@ $breakpoints: (
             line-height: 4rem;
             padding: 0 4rem;
             transition: all 3s ease-in-out;
+
+            @media (max-width: 1440px) {
+              width: 85rem;
+            }
 
             .header-info {
                 padding-left: 4rem;
